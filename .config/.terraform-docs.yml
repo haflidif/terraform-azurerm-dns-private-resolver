@@ -1,0 +1,5 @@
+formatter: "markdown table"
+
+output-values:
+  enabled: true
+  from: ".\\.config\\output_values.json"
