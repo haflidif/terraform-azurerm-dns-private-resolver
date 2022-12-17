@@ -1,0 +1,62 @@
+{
+  "dns_resolver": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dns_inbound_endpoints": [
+          "map",
+          [
+            "object",
+            {
+              "inbound_endpoint_id": "string",
+              "inbound_endpoint_name": "string"
+            }
+          ]
+        ],
+        "dns_outbound_endpoints": [
+          "map",
+          [
+            "object",
+            {
+              "dns_forwarding_rulesets": [
+                "map",
+                [
+                  "object",
+                  {
+                    "ruleset_id": "string",
+                    "ruleset_name": "string"
+                  }
+                ]
+              ],
+              "outbound_endpoint_id": "string",
+              "outbound_endpoint_name": "string"
+            }
+          ]
+        ],
+        "dns_resolver_id": "string"
+      }
+    ],
+    "value": {
+      "dns_inbound_endpoints": {
+        "inbound": {
+          "inbound_endpoint_id": "/subscriptions/01234567-abcd-efgh-ijkl-891011121314/resourceGroups/rg-dns-resolver-test-06076545238c8c77/providers/Microsoft.Network/dnsResolvers/test-private-dns-resolver/inboundEndpoints/inbound",
+          "inbound_endpoint_name": "inbound"
+        }
+      },
+      "dns_outbound_endpoints": {
+        "outbound": {
+          "dns_forwarding_rulesets": {
+            "outbound-default-ruleset": {
+              "ruleset_id": "/subscriptions/01234567-abcd-efgh-ijkl-891011121314/resourceGroups/rg-dns-resolver-test-06076545238c8c77/providers/Microsoft.Network/dnsForwardingRulesets/default-ruleset",
+              "ruleset_name": "default-ruleset"
+            }
+          },
+          "outbound_endpoint_id": "/subscriptions/01234567-abcd-efgh-ijkl-891011121314/resourceGroups/rg-dns-resolver-test-06076545238c8c77/providers/Microsoft.Network/dnsResolvers/test-private-dns-resolver/outboundEndpoints/outbound",
+          "outbound_endpoint_name": "outbound"
+        }
+      },
+      "dns_resolver_id": "/subscriptions/01234567-abcd-efgh-ijkl-891011121314/resourceGroups/rg-dns-resolver-test-06076545238c8c77/providers/Microsoft.Network/dnsResolvers/test-private-dns-resolver"
+    }
+  }
+}
