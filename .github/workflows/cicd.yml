@@ -1,16 +1,16 @@
-### This workflow will run only when Dependabot opens a PR on master ###
-### Full integration test is done by doing a plan, build and destroy of config under ./tests/auto_test1 ###
-### If tests are successful the PR is automatically merged to master ###
-### If the merge was completed the next patch version is released and the patch is bumped and pushed to terraform registry ###
+### This workflow will run when a PR is opened on main branch and as continues plan when pushing to feature branch ###
+### Full Plan test is done by doing a plan of config under ./tests/autotest ###
 
 name: "Automated Plan"
 on:
   push:
+    branches-ignore:
+      - main
+  pull-request:
     branches:
       - main
 
 jobs:
-  # Dependabot will open a PR on terraform version changes, this 'dependabot' job is only used to test TF version changes by running a plan, apply and destroy in sequence.
   terraform-plan:
     runs-on: ubuntu-latest
     permissions:
