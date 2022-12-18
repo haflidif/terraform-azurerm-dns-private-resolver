@@ -1,6 +1,6 @@
-### This workflow will run only when Dependabot opens a PR on master ###
-### Full integration test is done by doing a plan, build and destroy of config under ./tests/auto_test1 ###
-### If tests are successful the PR is automatically merged to master ###
+### This workflow will run only when Dependabot opens a PR on main ###
+### Full integration test is done by doing a plan, build and destroy of config under ./tests/autotest ###
+### If tests are successful the PR is automatically merged to main ###
 ### If the merge was completed the next patch version is released and the patch is bumped and pushed to terraform registry ###
 
 name: "Automated-Dependency-Tests-and-Release"
