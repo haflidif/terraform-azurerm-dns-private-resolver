@@ -65,8 +65,8 @@ resource "azurerm_subnet" "outbound" {
 
 module "dns-private-resolver" {
   source              = "../.."
-  resource_group_name = var.resource_group_name
-  location            = var.location
+  resource_group_name = azurerm_resource_group.dns_resolver.name
+  location            = azurerm_resource_group.dns_resolver.location
   dns_resolver_name   = var.dns_resolver_name
   virtual_network_id  = azurerm_virtual_network.vnet.id
   tags                = var.tags
