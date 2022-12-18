@@ -10,13 +10,13 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-      time: "11:30"
+      time: "11:40"
       timezone: "Europe/Oslo"
 
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "monday"
-      time: "11:40"
+      day: "sunday"
+      time: "11:45"
       timezone: "Europe/Oslo"
