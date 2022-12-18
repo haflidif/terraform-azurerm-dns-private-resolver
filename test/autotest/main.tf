@@ -100,7 +100,7 @@ module "dns-private-resolver" {
 
 resource "azurerm_private_dns_resolver_forwarding_rule" "corp_mycompany_com" {
   name                      = "corp_mycompany_com" # Can only contain letters, numbers, underscores, and/or dashes, and should start with a letter.
-  dns_forwarding_ruleset_id = module.dns-private-resolver.dns_resolver.dns_outbound_endpoints.outbound.dns_forwarding_rulesets.default-ruleset.ruleset_id
+  dns_forwarding_ruleset_id = module.dns-private-resolver.dns_resolver.dns_outbound_endpoints.outbound.dns_forwarding_rulesets.outbound-default-ruleset.ruleset_id
   domain_name               = "corp.mycompany.com." # Domain name supports 2-34 lables and must end with a dot (period) for example corp.mycompany.com. has three lables.
   enabled                   = true
   target_dns_servers {
