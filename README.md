@@ -18,7 +18,7 @@ This Module can be used to create Azure DNS Private Resolver, one or two Inbound
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.30.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.36.0 |
 
 ## Resources
 
