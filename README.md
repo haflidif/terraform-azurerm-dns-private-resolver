@@ -119,3 +119,10 @@ resource "azurerm_private_dns_resolver_forwarding_rule" "corp_mycompany_com" {
 }
 
 ```
+
+## Authors
+Originally created by [Haflidi Fridthjofsson](https://github.com/haflidif)
+
+## Other Resouces
+- [What is Azure DNS Private Resolver ?](https://learn.microsoft.com/en-us/azure/dns/dns-private-resolver-overview)
+- [Terraform AzureRM Provider Documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest)
