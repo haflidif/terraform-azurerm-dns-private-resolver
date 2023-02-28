@@ -5,7 +5,8 @@ output "dns_resolver" {
       for k, inbound_endpoint in azurerm_private_dns_resolver_inbound_endpoint.private_dns_resolver_inbound_endpoint : k =>
       {
         inbound_endpoint_id : inbound_endpoint.id,
-        inbound_endpoint_name : inbound_endpoint.name
+        inbound_endpoint_name : inbound_endpoint.name,
+        inbound_endpoint_private_ip_address : inbound_endpoint.ip_configurations[0].private_ip_address
       }
     })
     dns_outbound_endpoints = tomap({
