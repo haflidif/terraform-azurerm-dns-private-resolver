@@ -120,6 +120,22 @@ resource "azurerm_private_dns_resolver_forwarding_rule" "corp_mycompany_com" {
 
 ```
 
+### Example 3 
+In this example we are going to use the inbound endpoint private ip address module output from the private dns resolver created in [Example 1](#example-1) to assign the private ip address to a custom dns servers on virtual network, you can either use the inline `dns_server` list in [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) or the individual resource [azurerm_virtual_network_dns_servers](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_dns_servers) but keep in mind, that the DNS servers can't be configured inline and on the individual resource for the same virtual network, as they will conflict with each other.
+
+```hcl
+#..omitted
+
+resource "azurerm_virtual_network" "example" {
+  name                = "example-network"
+  location            = azurerm_resource_group.dns_resolver.location
+  resource_group_name = azurerm_resource_group.dns_resolver.name
+  address_space       = ["10.0.0.0/16"]
+  dns_servers         = [module.dns_private_resolver.dns_resolver.dns_inbound_endpoints.inbound.inbound_endpoint_private_ip_address]
+}
+
+```
+
 ## Authors
 Originally created by [Haflidi Fridthjofsson](https://github.com/haflidif)
 
