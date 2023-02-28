@@ -126,5 +126,5 @@ resource "azurerm_virtual_network" "vnet_custom_dns" {
   location            = azurerm_resource_group.dns_resolver.location
   resource_group_name = azurerm_resource_group.dns_resolver.name
   address_space       = ["10.0.0.0/16"]
-  dns_servers         = [module.test.dns-private-resolver.dns_inbound_endpoints.inbound.inbound_endpoint_private_ip_address]
+  dns_servers         = [module.dns-private-resolver.dns_resolver.dns_inbound_endpoints.inbound.inbound_endpoint_private_ip_address]
 }
