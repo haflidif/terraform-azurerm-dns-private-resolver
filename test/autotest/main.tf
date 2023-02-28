@@ -116,3 +116,15 @@ resource "azurerm_private_dns_resolver_forwarding_rule" "corp_mycompany_com" {
     module.dns-private-resolver
   ]
 }
+
+##################################################################################
+# Testing: Adding Inbound Endpoint private ip as Custom DNS Server Configuration #
+##################################################################################
+
+resource "azurerm_virtual_network" "vnet_custom_dns" {
+  name                = "vnet-custom-dns-server-${random_id.rg.hex}"
+  location            = azurerm_resource_group.dns_resolver.location
+  resource_group_name = azurerm_resource_group.dns_resolver.name
+  address_space       = ["10.0.0.0/16"]
+  dns_servers         = [module.test.dns-private-resolver.dns_inbound_endpoints.inbound.inbound_endpoint_private_ip_address]
+}
