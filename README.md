@@ -1,5 +1,10 @@
 # Module: Azure DNS Private Resolver
 
+> # **⚠️ THIS MODULE IS NO LONGER MAINTAINED ⚠️**
+> Thank you very much for using this module and supporting the development of it, but due to the fact that Microsoft has released a new module for Azure DNS Private Resolver, I have decided to stop maintaining this module and archive it.
+>
+> Please use the [Azure Verified Module for DNS Private Resolver](https://github.com/Azure/terraform-azurerm-avm-res-network-dnsresolver) instead.
+
 ## Description
 Create Azure DNS Private Resolver with Inbound / Outbound endpoints as well as DNS Forwarding rule sets using Terraform.
 
